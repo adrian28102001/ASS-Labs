@@ -1,0 +1,35 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    container_name: ecommerce-postgres
+    environment:
+      POSTGRES_DB: ecommercedb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ecommerce-api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+    ports:
+      - "5000:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  postgres-data:

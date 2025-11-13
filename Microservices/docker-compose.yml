@@ -1,0 +1,120 @@
+services:
+  # Databases
+  identity-db:
+    image: postgres:17-alpine
+    container_name: identity-db
+    environment:
+      POSTGRES_DB: identitydb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5433:5432"
+    volumes:
+      - identity-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  catalog-db:
+    image: postgres:17-alpine
+    container_name: catalog-db
+    environment:
+      POSTGRES_DB: catalogdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5434:5432"
+    volumes:
+      - catalog-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  orders-db:
+    image: postgres:17-alpine
+    container_name: orders-db
+    environment:
+      POSTGRES_DB: ordersdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5435:5432"
+    volumes:
+      - orders-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # Microservices
+  identity-service:
+    build:
+      context: ./services/Identity
+      dockerfile: Dockerfile
+    container_name: identity-service
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+    ports:
+      - "5001:8080"
+    depends_on:
+      identity-db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  catalog-service:
+    build:
+      context: ./services/Catalog
+      dockerfile: Dockerfile
+    container_name: catalog-service
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+    ports:
+      - "5002:8080"
+    depends_on:
+      catalog-db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  orders-service:
+    build:
+      context: ./services/Orders
+      dockerfile: Dockerfile
+    container_name: orders-service
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+    ports:
+      - "5003:8080"
+    depends_on:
+      orders-db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # API Gateway
+  api-gateway:
+    build:
+      context: ./gateway/ApiGateway
+      dockerfile: Dockerfile
+    container_name: api-gateway
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+    ports:
+      - "5000:8080"
+    depends_on:
+      - identity-service
+      - catalog-service
+      - orders-service
+    restart: unless-stopped
+
+volumes:
+  identity-db-data:
+  catalog-db-data:
+  orders-db-data:

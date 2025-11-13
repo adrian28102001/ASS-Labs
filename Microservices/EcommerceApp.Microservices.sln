@@ -1,0 +1,99 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+
+# Identity Service
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Identity.Domain", "services\Identity\Identity.Domain\Identity.Domain.csproj", "{11111111-1111-1111-1111-111111111111}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Identity.Application", "services\Identity\Identity.Application\Identity.Application.csproj", "{11111111-1111-1111-1111-111111111112}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Identity.Infrastructure", "services\Identity\Identity.Infrastructure\Identity.Infrastructure.csproj", "{11111111-1111-1111-1111-111111111113}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Identity.API", "services\Identity\Identity.API\Identity.API.csproj", "{11111111-1111-1111-1111-111111111114}"
+EndProject
+
+# Catalog Service
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Domain", "services\Catalog\Catalog.Domain\Catalog.Domain.csproj", "{22222222-2222-2222-2222-222222222221}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Application", "services\Catalog\Catalog.Application\Catalog.Application.csproj", "{22222222-2222-2222-2222-222222222222}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Infrastructure", "services\Catalog\Catalog.Infrastructure\Catalog.Infrastructure.csproj", "{22222222-2222-2222-2222-222222222223}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.API", "services\Catalog\Catalog.API\Catalog.API.csproj", "{22222222-2222-2222-2222-222222222224}"
+EndProject
+
+# Orders Service
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orders.Domain", "services\Orders\Orders.Domain\Orders.Domain.csproj", "{33333333-3333-3333-3333-333333333331}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orders.Application", "services\Orders\Orders.Application\Orders.Application.csproj", "{33333333-3333-3333-3333-333333333332}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orders.Infrastructure", "services\Orders\Orders.Infrastructure\Orders.Infrastructure.csproj", "{33333333-3333-3333-3333-333333333333}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orders.API", "services\Orders\Orders.API\Orders.API.csproj", "{33333333-3333-3333-3333-333333333334}"
+EndProject
+
+# API Gateway
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiGateway", "gateway\ApiGateway\ApiGateway.csproj", "{44444444-4444-4444-4444-444444444444}"
+EndProject
+
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11111111-1111-1111-1111-111111111111}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11111111-1111-1111-1111-111111111111}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11111111-1111-1111-1111-111111111111}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11111111-1111-1111-1111-111111111111}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11111111-1111-1111-1111-111111111112}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11111111-1111-1111-1111-111111111112}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11111111-1111-1111-1111-111111111112}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11111111-1111-1111-1111-111111111112}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11111111-1111-1111-1111-111111111113}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11111111-1111-1111-1111-111111111113}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11111111-1111-1111-1111-111111111113}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11111111-1111-1111-1111-111111111113}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11111111-1111-1111-1111-111111111114}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11111111-1111-1111-1111-111111111114}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11111111-1111-1111-1111-111111111114}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11111111-1111-1111-1111-111111111114}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22222222-2222-2222-2222-222222222221}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22222222-2222-2222-2222-222222222221}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22222222-2222-2222-2222-222222222221}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22222222-2222-2222-2222-222222222221}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22222222-2222-2222-2222-222222222222}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22222222-2222-2222-2222-222222222222}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22222222-2222-2222-2222-222222222222}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22222222-2222-2222-2222-222222222222}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22222222-2222-2222-2222-222222222223}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22222222-2222-2222-2222-222222222223}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22222222-2222-2222-2222-222222222223}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22222222-2222-2222-2222-222222222223}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22222222-2222-2222-2222-222222222224}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22222222-2222-2222-2222-222222222224}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22222222-2222-2222-2222-222222222224}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22222222-2222-2222-2222-222222222224}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33333333-3333-3333-3333-333333333331}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33333333-3333-3333-3333-333333333331}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33333333-3333-3333-3333-333333333331}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33333333-3333-3333-3333-333333333331}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33333333-3333-3333-3333-333333333332}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33333333-3333-3333-3333-333333333332}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33333333-3333-3333-3333-333333333332}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33333333-3333-3333-3333-333333333332}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33333333-3333-3333-3333-333333333333}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33333333-3333-3333-3333-333333333333}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33333333-3333-3333-3333-333333333333}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33333333-3333-3333-3333-333333333333}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33333333-3333-3333-3333-333333333334}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33333333-3333-3333-3333-333333333334}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33333333-3333-3333-3333-333333333334}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33333333-3333-3333-3333-333333333334}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44444444-4444-4444-4444-444444444444}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44444444-4444-4444-4444-444444444444}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44444444-4444-4444-4444-444444444444}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44444444-4444-4444-4444-444444444444}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
